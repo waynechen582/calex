@@ -1,0 +1,109 @@
+﻿    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_box text-center">
+                        <h2 class="breadcrumb-title"><!--{if $smarty.session.valid_lang == "zh-tw"}-->聯絡我們<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->联络我们<!--{elseif $smarty.session.valid_lang == 'en'}-->Contact Us<!--{/if}--></h2>
+                        <!-- breadcrumb-list start -->
+                        <ul class="breadcrumb-list">
+                            <li class="breadcrumb-item"><a href="index.php"><!--{if $smarty.session.valid_lang == "zh-tw"}-->首頁<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->首页<!--{elseif $smarty.session.valid_lang == 'en'}-->Home<!--{/if}--></a></li>
+                            <li class="breadcrumb-item active"><!--{if $smarty.session.valid_lang == "zh-tw"}-->聯絡我們<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->联络我们<!--{elseif $smarty.session.valid_lang == 'en'}-->Contact Us<!--{/if}--> </li>
+                        </ul>
+                        <!-- breadcrumb-list end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- form -->
+        <section class="mt-7 mb-6">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="contact-box h-100 px-3 py-4">
+                        <!-- Email -->
+                        <div class="contact-info">
+                            <div class="d-flex align-items-center"><i class="fa fa-envelope"></i>
+                            <h5 class="ms-2 my-0">E-mail</h5></div>
+                            <p id="ContentPlaceHolder1_contact_email">service@calex.com.tw</p>
+                        </div>
+                        <!-- Phone -->
+                        <div class="contact-info">
+                            <div class="d-flex align-items-center"><i class="fa fa-phone"></i>
+                            <h5 class="ms-2 my-0"><!--{if $smarty.session.valid_lang == "zh-tw"}-->電話<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->电话<!--{elseif $smarty.session.valid_lang == 'en'}-->Phone<!--{/if}--></h5></div>
+                            <p id="ContentPlaceHolder1_contact_tel"><!--{if $smarty.session.valid_lang == "zh-tw"}-->(02)-2528-8161<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->+886-2-2528-8161<!--{elseif $smarty.session.valid_lang == 'en'}-->+886-2-2528-8161<!--{/if}--></p>
+                        </div>
+                        <!-- Fax -->
+                        <div class="contact-info">
+                            <div class="d-flex align-items-center"><i class="fa fa-fax"></i>
+                            <h5 class="ms-2 my-0"><!--{if $smarty.session.valid_lang == "zh-tw"}-->傳真<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->传真<!--{elseif $smarty.session.valid_lang == 'en'}-->Fax<!--{/if}--></h5></div>
+                            <p id="ContentPlaceHolder1_service_time"><!--{if $smarty.session.valid_lang == "zh-tw"}-->(02)-2528-8262<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->+886-2-2528-8262<!--{elseif $smarty.session.valid_lang == 'en'}-->+886-2-2528-8262<!--{/if}--></p>
+                        </div>
+                        <!-- Address -->
+                        <div class="contact-info">
+                            <div class="d-flex align-items-center"><i class="fa fa-location-arrow"></i>
+                            <h5 class="ms-2 my-0"><!--{if $smarty.session.valid_lang == "zh-tw"}-->地址<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->地址<!--{elseif $smarty.session.valid_lang == 'en'}-->Address<!--{/if}--></h5></div>
+                            <p id="ContentPlaceHolder1_service_time"><!--{if $smarty.session.valid_lang == "zh-tw"}-->105台北市松山區南京東路5段230號8F-7<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->105台北市松山区南京东路5段230号8F-7<!--{elseif $smarty.session.valid_lang == 'en'}-->105台北市松山區南京東路5段230號8F-7<!--{/if}--></p>
+                        </div>
+                    </div>
+                        </div>
+
+                        <div class="col-lg-6 col-lg-6">
+                            <div class="contact-form-wrap">
+
+                                <!-- <form id="contact-form" action="http://whizthemes.com/mail-php/jowel/mitech/php/mail.php" method="post"> -->
+                                <form id="contactForm" action="contact.php" method="post">
+                                    <div class="contact-form">
+                                        <div class="contact-input">
+                                            <div class="contact-inner">
+                                                <input name="con_name" required type="text" placeholder="<!--{if $smarty.session.valid_lang == "zh-tw"}-->姓名<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->姓名<!--{elseif $smarty.session.valid_lang == 'en'}-->Name<!--{/if}--> *">
+                                            </div>
+                                            <div class="contact-inner">
+                                                <input name="con_email" required type="email" placeholder="Email *">
+                                            </div>
+                                        </div>
+                                        <div class="contact-inner">
+                                            <input name="con_subject" required maxlength="150" type="text" placeholder="<!--{if $smarty.session.valid_lang == "zh-tw"}-->標題<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->标题<!--{elseif $smarty.session.valid_lang == 'en'}-->Subject<!--{/if}--> *">
+                                        </div>
+                                        <div class="contact-inner contact-message">
+                                            <textarea name="con_message" required maxlength="2000" placeholder="<!--{if $smarty.session.valid_lang == "zh-tw"}-->訊息內容<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->讯息内容<!--{elseif $smarty.session.valid_lang == 'en'}-->Message<!--{/if}-->"></textarea>
+                                        </div>
+                                        <div class="contact-inner">
+                                            <input name="captcha" type="text" required class="form-control" id="captcha" placeholder="<!--{if $smarty.session.valid_lang == "zh-tw"}-->請輸入驗證碼<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->请输入验证码<!--{elseif $smarty.session.valid_lang == 'en'}-->Verification code<!--{/if}-->" utocomplete="off">
+                                            <div>
+                                                <img style="margin-top: 3px;border: 1px solid #4481eb;" id="captchaimg" src="ruby_class/securimage/securimage_show.php" alt="CAPTCHA Image">
+                                                <a href="#" onclick="document.getElementById('captchaimg').src = 'ruby_class/securimage/securimage_show.php?' + Math.random(); return false">
+                                                <img height="28" width="28" src="ruby_class/securimage/images/refresh.png" alt="Refresh Image" onclick="this.blur()" style="border: 0px;vertical-align: bottom;"></a>
+                                            </div>
+                                        </div>
+                                        <div class="submit-btn mt-20">
+                                            <button class="btn btn-primary" name="sendMsg" type="submit"><!--{if $smarty.session.valid_lang == "zh-tw"}-->送出訊息<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->送出讯息<!--{elseif $smarty.session.valid_lang == 'en'}-->Send message<!--{/if}--></button>
+                                            <p class="form-messege"></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- form -->
+
+        <!-- Map -->
+        <section class="mapbox2">
+            <div id="mapbox" class="row m0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.500888293378!2d121.56351391537902!3d25.051006843762686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ab969e5e642b%3A0x96720aecd5eb070!2zMTA15Y-w5YyX5biC5p2-5bGx5Y2A5Y2X5Lqs5p2x6Lev5LqU5q61MjMwLTIzNOiZnw!5e0!3m2!1szh-TW!2stw!4v1651478482380!5m2!1szh-TW!2stw" style="border:0;padding:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        $(function () {
+            $("#contactForm").validate();
+        });
+
+    </script>

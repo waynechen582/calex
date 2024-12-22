@@ -1,0 +1,265 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="css/fontawesome.min.css" rel="stylesheet">
+    <link href="css/brands.min.css" rel="stylesheet">
+    <link href="css/solid.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link href="css/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="css/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- dataTables Start -->
+    <script src="js/simple-datatables.js" crossorigin="anonymous"></script>
+    <script src="js/datatables-simple-demo.js"></script>
+    <!-- dataTables End -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script>
+        <!-- jquery.validate Start -->
+        <!--{if $smarty.session.valid_lang == "zh-tw"}-->
+            $.extend($.validator.messages, {
+                required: "必填",
+                remote: "請修正此字段",
+                email: "請輸入E-mail",
+                url: "請輸入有效的網址",
+                date: "請輸入有效的日期",
+                dateISO: "請輸入有效的日期 (YYYY-MM-DD)",
+                number: "請輸入有效的數字",
+                digits: "只能輸入數字",
+                creditcard: "請輸入有效的信用卡號碼",
+                equalTo: "你的輸入不相同",
+                extension: "請輸入有效的後綴",
+                maxlength: $.validator.format("最多可以輸入 {0} 個字元"),
+                minlength: $.validator.format("最少要輸入 {0} 個字元"),
+                rangelength: $.validator.format("請輸入長度在 {0} 到 {1} 之間的字元"),
+                range: $.validator.format("請輸入範圍在 {0} 到 {1} 之間的數值"),
+                max: $.validator.format("請輸入不大於 {0} 的數值"),
+                min: $.validator.format("請輸入不小於 {0} 的數值")
+            });
+        <!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->
+            $.extend($.validator.messages, {
+                required: "必填",
+                remote: "请修正此字段",
+                email: "请输入有效的邮箱",
+                url: "请输入有效的网址",
+                date: "请输入有效的日期",
+                dateISO: "请输入有效的日期 (YYYY-MM-DD)",
+                number: "请输入有效的数字",
+                digits: "只能输入数字",
+                creditcard: "请输入有效的信用卡号码",
+                equalTo: "你的输入不相同",
+                extension: "请输入有效的后缀",
+                maxlength: $.validator.format("最多可以输入 {0} 个字符"),
+                minlength: $.validator.format("最少要输入 {0} 个字符"),
+                rangelength: $.validator.format("请输入长度在 {0} 到 {1} 之间的字符串"),
+                range: $.validator.format("请输入范围在 {0} 到 {1} 之间的数值"),
+                max: $.validator.format("请输入不大于 {0} 的数值"),
+                min: $.validator.format("请输入不小于 {0} 的数值")
+            });
+        <!--{elseif $smarty.session.valid_lang == 'en'}-->
+            $.extend($.validator.messages, {
+                required: "required",
+                remote: "Please fix this field.",
+                email: "Please enter a valid email address.",
+                url: "Please enter a valid URL.",
+                date: "Please enter a valid date.",
+                dateISO: "Please enter a valid date (ISO).",
+                number: "Please enter a valid number.",
+                digits: "Please enter only digits.",
+                creditcard: "Please enter a valid credit card number.",
+                equalTo: "Please enter the same value again.",
+                accept: "Please enter a value with a valid extension.",
+                maxlength: jQuery.validator.format("Please enter no more than {0} characters."),
+                minlength: jQuery.validator.format("Please enter at least {0} characters."),
+                rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+                range: jQuery.validator.format("Please enter a value between {0} and {1}."),
+                max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+                min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
+            });
+        <!--{/if}-->
+    </script>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+    <!-- jquery.validate End -->
+    <title><!--{if $smarty.session.valid_lang == "zh-tw"}-->Calex.com 松技網路資料庫<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->Calex.com 松技网路资料库<!--{elseif $smarty.session.valid_lang == 'en'}-->Calex.com<!--{/if}--></title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-sticky" style="z-index:99;">
+      <div class="container">
+          
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" data-aos="fade-down">
+      <div class="navbar-nav">
+        <a class="nav-link" aria-current="page" href="index.php"><!--{if $smarty.session.valid_lang == "zh-tw"}-->首頁<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->首页<!--{elseif $smarty.session.valid_lang == 'en'}-->Home<!--{/if}--></a>
+        <a class="nav-link" href="product.php"><!--{if $smarty.session.valid_lang == "zh-tw"}-->產品項目<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->产品项目<!--{elseif $smarty.session.valid_lang == 'en'}-->Product<!--{/if}--></a>
+        <a class="nav-link" href="freetry.php"><!--{if $smarty.session.valid_lang == "zh-tw"}-->免費試用<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->免费试用<!--{elseif $smarty.session.valid_lang == 'en'}-->Try For Free<!--{/if}--></a>
+      </div>
+    </div>
+        <div class="col-auto col-lg-auto align-items-center" style="height:50px;" data-aos="fade-down">
+        <a class="navbar-brand" href="index.php"><img src="images/logo.png" style="height:50px;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        </div>
+          <div class="d-flex col-auto col-lg-4 justify-content-end" data-aos="fade-down">
+              <!--{if $smarty.session.valid_memberid}-->
+                    <div class="dropdown">
+						  <a class="dropdown-toggle btn btn-sm btn-round btn-outline-light me-3" href="#" role="button" id="dropdownMember" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <!--{if $smarty.session.valid_lang == "zh-tw"}-->會員專區<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->会员专区<!--{elseif $smarty.session.valid_lang == 'en'}-->Member<!--{/if}--> </a>
+						  <div class="dropdown-menu mt-2 shadow" aria-labelledby="dropdownMember">
+                              <span class="dropdown-item-text"><i class="fa-solid fa-user me-2"></i> <!--{$memberName}--></span>
+						  	    <div class="dropdown-divider"></div>  
+                              <a class="dropdown-item" href="member.php?profile=1"><i class="fa-solid fa-id-card text-primary"></i> <!--{if $smarty.session.valid_lang == "zh-tw"}-->個人資料<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->个人资料<!--{elseif $smarty.session.valid_lang == 'en'}-->Profile<!--{/if}--></a>
+                                <a class="dropdown-item" href="member.php?subscription=1"><i class="fa-solid fa-list text-primary"></i> <!--{if $smarty.session.valid_lang == "zh-tw"}-->訂購項目<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->订购项目<!--{elseif $smarty.session.valid_lang == 'en'}-->Subscription<!--{/if}--></a>
+                              <a class="dropdown-item" href="member.php?payment=1"><i class="fa-solid fa-money-check-dollar text-primary"></i> <!--{if $smarty.session.valid_lang == "zh-tw"}-->付款記錄<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->付款记录<!--{elseif $smarty.session.valid_lang == 'en'}-->Payment record<!--{/if}--></a>
+                                <a class="dropdown-item" href="login.php?logout=1"><i class="fa-solid fa-right-from-bracket text-primary"></i> <!--{if $smarty.session.valid_lang == "zh-tw"}-->登出<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->登出<!--{elseif $smarty.session.valid_lang == 'en'}-->Logout<!--{/if}--></a>
+						  </div>
+						</div>
+              <!--{else}-->
+              <a class="btn btn-sm btn-round btn-outline-light d-none d-lg-inline-block me-3" href="login.php"><!--{if $smarty.session.valid_lang == "zh-tw"}-->登入／註冊<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->登录／注册<!--{elseif $smarty.session.valid_lang == 'en'}-->Login／Register<!--{/if}--></a>
+              <!--{/if}-->  
+            <!-- Language -->
+              <span class="me-1 text-white"><i class="fa fa-language"></i></span>
+						<div class="dropdown">
+						  <a class="dropdown-toggle text-white" href="#" role="button" id="dropdownLanguage" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <!--{$deflang}--> </a>
+						  <div class="dropdown-menu mt-2 shadow" aria-labelledby="dropdownLanguage">
+						  	    <span class="dropdown-item-text"><!--{if $smarty.session.valid_lang == "zh-tw"}-->選擇語言<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->选择语言<!--{elseif $smarty.session.valid_lang == 'en'}-->Select language<!--{/if}--></span>
+						  	    <div class="dropdown-divider"></div>
+                                <!--{foreach from=$langarray item=lang key=langid}-->
+                                <!--{if $langid != $deflangid}-->
+                                <a class="dropdown-item" href="" onclick="setlang('<!--{$langid}-->')"> <!--{$lang}--></a>
+                                <!--{/if}-->
+                                <!--{/foreach}-->
+						  </div>
+						</div>
+
+          </div>
+      </div>
+    </nav>
+
+    <!-- Content Staart -->
+        <!--{if $index}-->
+            <!--{include file="index.html"}-->
+        <!--{/if}-->
+        <!--{if $contact}-->
+            <!--{include file="contact.html"}-->
+        <!--{/if}-->
+        <!--{if $product}-->
+            <!--{include file="product.html"}-->
+        <!--{/if}-->
+        <!--{if $privacy}-->
+            <!--{include file="privacy.html"}-->
+        <!--{/if}-->
+        <!--{if $login}-->
+            <!--{include file="login.html"}-->
+        <!--{/if}-->
+        <!--{if $forgot}-->
+            <!--{include file="forgot.html"}-->
+        <!--{/if}-->
+        <!--{if $register}-->
+            <!--{include file="register.html"}-->
+        <!--{/if}-->
+        <!--{if $member}-->
+            <!--{include file="member.html"}-->
+        <!--{/if}-->
+        <!--{if $freetry}-->
+            <!--{include file="freetry.html"}-->
+        <!--{/if}-->
+        <!--{if $resetpass}-->
+            <!--{include file="resetpass.html"}-->
+        <!--{/if}-->
+    <!-- Content End -->
+
+    <!-- Footer -->
+    <footer class="footer text-white bt-0 py-7" style="background-image: linear-gradient(135deg, #4481eb 0%, #04befe 100%);">
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-md-6">
+            <div class="nav nav-bold justify-content-center justify-content-md-end">
+              <a class="nav-link text-white" href="contact.php"><!--{if $smarty.session.valid_lang == "zh-tw"}-->聯絡我們<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->联络我们<!--{elseif $smarty.session.valid_lang == 'en'}-->Contact Us<!--{/if}--></a>
+              <a class="nav-link text-white" href="privacy.php"><!--{if $smarty.session.valid_lang == "zh-tw"}-->隱私權政策<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->隐私权政策<!--{elseif $smarty.session.valid_lang == 'en'}-->Privacy Policy<!--{/if}--></a>
+            </div>
+          </div>
+
+          <div class="col-md-6 text-center text-md-start mt-5 mt-md-0">
+            <div class="social social-bg-dark">
+                <!--{section name=abc loop=$socialidlist}-->
+              <a class="social" href="<!--{$socialLinklist[abc]}-->" target="_blank"><i class="<!--{$socialIconlist[abc]}-->"></i></a>
+                <!--{/section}-->
+            </div>
+          </div>
+
+          <div class="col-12 text-center">
+            <br>
+            <small><!--{if $smarty.session.valid_lang == "zh-tw"}-->© 松技網路資料庫 Calex.com<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->© 松技网路资料库 Calex.com<!--{elseif $smarty.session.valid_lang == 'en'}-->© Calex.com<!--{/if}--> 2022, All rights reserved.</small>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+    <script src="js/swiper.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--owl-carousel-->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/wow.min.js"></script>
+	<!--Template Functions-->
+	<script src="js/functions.js"></script>
+
+    <script>
+        AOS.init();
+
+        var wow = new WOW(
+    {
+        boxClass: 'wow', // 要套用WOW.js縮需要的動畫class(預設是wow) 
+        animateClass: 'animated', // 要"動起來"的動畫(預設是animated, 因此如果你有其他動畫library要使用也可以在這裡調整) 
+        offset: 0, // 距離顯示多遠開始顯示動畫 (預設是0, 因此捲動到顯示時才出現動畫)
+        mobile: true, // 手機上是否要套用動畫 (預設是true) 
+        live: true, // 非同步產生的內容是否也要套用 (預設是true, 非常適合搭配SPA)
+        callback: function(box) { // 當每個要開始時, 呼叫這裡面的內容, 參數是要開始進行動畫特效的element DOM
+        },
+        scrollContainer: null   // 可以設定成只套用在某個container中捲動才呈現, 不設定就是整個視窗
+    }
+);
+        wow.init();
+
+        function setlang(lang) {
+            $.ajax({
+                type: "POST",
+                url: "main.php",
+                data: { setlang: "1", lang: lang },
+                dataType: "html",
+                success: function (response) {
+                    var uri = window.location.href;
+                    var app = uri.split('/')[uri.split('/').length - 1];
+                    location.href = app;
+                },
+                error: function (thrownError) {
+                    console.log(thrownError);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

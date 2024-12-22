@@ -1,0 +1,183 @@
+﻿    <!-- =======================
+	Main Banner -->
+	<section class="p-0">
+		<div class="swiper-container h-400 h-lg-800 swiper-arrow-hover swiper-slider-fade">
+			<div class="swiper-wrapper">
+            <!--{section name=abc loop=$banneridlist}-->
+                <!--{if $urllist[abc]}-->
+                <div class='swiper-slide' style='background-image:url(<!--{$imagepathlist[abc]}-->); background-position: center center; background-size: cover;' title="<!--{$titlelist[abc]}-->" onclick="location='<!--{$urllist[abc]}-->'"></div>
+                <!--{else}-->
+                <div class='swiper-slide' style='background-image:url(<!--{$imagepathlist[abc]}-->); background-position: center center; background-size: cover;' title="<!--{$titlelist[abc]}-->"></div>
+                <!--{/if}-->
+            <!--{/section}-->
+            </div>
+			<!-- Slider buttons -->
+			<div class="swiper-button-next"><i class="fa-solid fa-chevron-right"></i></div>
+			<div class="swiper-button-prev"><i class="fa-solid fa-chevron-left"></i></div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</section>
+	<!-- =======================
+	Main banner -->
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- About Calex -->
+        <section class="about-calex">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="about-tax-content">
+                            <div class="section-title">
+                                <h2 class="title wow pixFadeUp" style="visibility: visible; animation-name: pixFadeUp;"><!--{$aboutTitle}--></h2>
+                            </div>
+                            <p class="wow pixFadeUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: pixFadeUp;"><!--{$aboutContent}--></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-5" data-aos="fade-left">
+                        <img src=<!--{$aboutImagepath}--> class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Calex -->
+
+        <!-- Features -->
+        <header class="section-header">
+            <h2 class="title wow pixFadeUp" style="visibility: visible; animation-name: pixFadeUp;"><!--{if $smarty.session.valid_lang == "zh-tw"}-->產品項目<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->产品项目<!--{elseif $smarty.session.valid_lang == 'en'}-->Product item<!--{/if}--></h2>
+            <hr>
+          </header>
+        <!--{section name=abc loop=$prodidlist}-->
+        <!--{if $smarty.section.abc.iteration is div by 2}-->
+        <section class="section overflow-hidden">
+        <div class="container">
+          <div class="row gap-y align-items-center">
+
+            <div class="col-md-5 mx-auto text-center">
+              <img class="img-fluid" src="<!--{$introImagelist[abc]}-->" alt="..." data-aos="fade-left">
+            </div>
+
+
+            <div class="col-md-4 mx-auto order-md-first">
+              <h3><!--{$prodNamelist[abc]}--></h3>
+              <p><!--{$prodIntrolist[abc]}--></p>
+              <a href="product.php?prodid=<!--{$prodidlist[abc]}-->">進一步了解 <i class="ti-angle-right fs-10 ml-1"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+        <!--{else}-->
+        <section class="section bg-gray overflow-hidden">
+        <div class="container">
+          <div class="row gap-y align-items-center">
+
+            <div class="col-md-5 mx-auto text-center">
+              <img class="img-fluid" src="<!--{$introImagelist[abc]}-->" alt="..." data-aos="fade-right">
+            </div>
+
+
+            <div class="col-md-4 mx-auto">
+              <h3><!--{$prodNamelist[abc]}--></h3>
+              <p><!--{$prodIntrolist[abc]}--></p>
+              <a href="product.php?prodid=<!--{$prodidlist[abc]}-->">進一步了解 <i class="ti-angle-right fs-10 ml-1"></i></a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+        <!--{/if}-->
+        <!--{/section}-->
+
+        <!-- Features -->
+
+        <!-- Customer Video -->
+        <div class="mfp-bg mfp-ready d-none"></div>
+        <div class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-ready d-none" tabindex="-1" style="overflow: hidden auto;">
+            <div class="mfp-container mfp-s-ready mfp-iframe-holder">
+                <div class="mfp-content">
+                    <div class="mfp-iframe-scaler"><button title="Close (Esc)" type="button" class="mfp-close">×</button>
+                        <video width="500" height="322" class="mfp-iframe" controls>
+                            <source src="images/sinphar.mp4" type="video/mp4">
+                        </video>    
+                    </div>
+                </div>
+                <div class="mfp-preloader">Loading...</div>
+            </div>
+        </div>
+        <section class="section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="about-video-wrapper">
+                            <div class="popup-videos wow pixFadeRight" style="visibility: visible; animation-name: pixFadeRight;">
+                                <div class="video-thumbnail">
+                                    <img src="<!--{$customImagepath}-->" alt="thumbnail" class="w-100"> <span class="dot-shape"><img src="images/dot.png" alt="saaspik"></span>
+                                </div>
+                                <a href="#" class="play-btn popup-video large" onclick="videoplay();"><i class="fa-solid fa-circle-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-tax-content" data-aos="fade-left">
+                        <div class="section-title">
+                            <h2 class="title wow pixFadeUp" style="visibility: visible; animation-name: pixFadeUp;"><!--{$customTitle}--></h2>
+                        </div>
+                        <ul class="list-items wow pixFadeUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: pixFadeUp;">
+                            <p><!--{$customContent}--></p>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Customer Video -->
+
+        <!-- Main Customer -->      
+        <section class="section" style="background-image: url('images/contact-bg.jpg')">
+        <div class="container">
+          <header class="section-header" data-aos="fade-down">
+            <h2 class="title wow pixFadeUp" style="visibility: visible; animation-name: pixFadeUp;"><!--{if $smarty.session.valid_lang == "zh-tw"}-->主要客戶<!--{elseif $smarty.session.valid_lang == 'zh-cn'}-->主要客户<!--{elseif $smarty.session.valid_lang == 'en'}-->Major client<!--{/if}--></h2>
+            <hr>
+          </header>
+          <div class="pb-7 owl-carousel owl-theme" data-aos="fade-up">
+              <!--{section name=abc loop=$maincustidlist}-->
+              <img src="<!--{$custImagelist[abc]}-->" class="img-fluid">
+              <!--{/section}-->
+          </div>
+            
+          
+          
+
+
+
+        </div>
+      </section>
+        <!-- Main Customer -->
+
+        <!-- free try -->
+        <section class="section bg-gray text-center" data-aos="fade-down">
+        <div class="container">
+          <h2 class="mb-6"><strong>Join over 1,000 companies that trust us.</strong></h2>
+          <p class="lead text-muted">The best sharing and storage solution for your business</p>
+          <hr>
+          <a class="btn btn-lg btn-round btn-primary" href="freetry.php" style="font-size:1rem;">免費試用30天</a>
+        </div>
+      </section>
+        <!-- free try -->
+
+    </main>
+
+    <script>
+
+        function videoplay() {
+            $(".mfp-wrap").removeClass("d-none");
+            $(".mfp-bg").removeClass("d-none");
+        }
+
+        $(".mfp-close").click(function () {
+            $(".mfp-wrap").addClass("d-none");
+            $(".mfp-bg").addClass("d-none");
+        });
+</script>
